@@ -1,4 +1,4 @@
-# wan-switcher
+# adaptiveRouting
 
 HTTP デーモンサーバーとして動作し、LAN の IP アドレスを WAN インターフェースに動的に割り当てます。
 
@@ -257,7 +257,7 @@ cargo build --release
 ### サーバー起動（デフォルト設定）
 
 ```sh
-sudo ./target/release/wan-switcher
+sudo ./target/release/adaptiverouting
 ```
 
 デフォルト設定:
@@ -270,7 +270,7 @@ sudo ./target/release/wan-switcher
 
 ```sh
 # カスタムインターフェース名を指定
-sudo WAN0=enp0s3 WAN1=enp0s4 LAN=enp0s5 ./target/release/wan-switcher
+sudo WAN0=enp0s3 WAN1=enp0s4 LAN=enp0s5 ./target/release/adaptiverouting
 ```
 
 起動時に LAN サブネット全体 (10.40.0.0/20) が wan0 に紐付けられます。
