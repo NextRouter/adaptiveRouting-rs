@@ -7,8 +7,8 @@ use std::process::Command;
 use std::sync::Arc;
 use tokio::sync::Mutex;
 
-mod VERSION {
-    pub const version: &str = "1.0.0";
+mod version {
+    pub const VERSION: &str = "1.0.0";
 }
 
 #[derive(Clone)]
@@ -313,7 +313,7 @@ async fn main() {
 
     println!(
         "Server listening on http://127.0.0.1:32599 => {}",
-        VERSION::version
+        version::VERSION
     );
 
     axum::serve(listener, app).await.expect("Server error");
