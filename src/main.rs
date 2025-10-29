@@ -7,6 +7,10 @@ use std::process::Command;
 use std::sync::Arc;
 use tokio::sync::Mutex;
 
+mod VERSION {
+    pub const version: &str = "1.0.0";
+}
+
 #[derive(Clone)]
 struct Config {
     wan0: String,
@@ -307,7 +311,10 @@ async fn main() {
         .await
         .expect("Failed to bind to port 32599");
 
-    println!("Server listening on http://127.0.0.1:32599");
+    println!(
+        "Server listening on http://127.0.0.1:32599 => {}",
+        VERSION::version
+    );
 
     axum::serve(listener, app).await.expect("Server error");
 }
